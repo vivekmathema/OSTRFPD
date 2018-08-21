@@ -19,16 +19,14 @@ In addition to Python (version 3.5 or above) the dependencies mentioned in 'requ
 Both source and binaries of OSTRFPD have been successfully tested in Windows 7,10 and Linux Ubuntu 16.04 with correctly installed dependencies
 
 
-
 ## Installation
 
-```
+
 Install Python3 from https://www.python.org/downloads/release/python-350
-```
+
 Whereby you should be able to download and install 32 or 64 bit version of  Python 3.5  
 
 Depending upon your python pip or pip3 should be fine. Please follow 'upgrade pip' instruction if you need to upgarde your pip for latest version and compability issues.
-
 
 
 pip3 install PyQt5==5.9.1 
@@ -49,9 +47,7 @@ For windows
 
 pip3 install pyinstaller==3.3.1
 
-
 This will generate standalone 'ostrfpd.exe' binary for windows.
-
 
 
 ## Execution
@@ -79,15 +75,13 @@ The same steps can be achieved by just running the 'run_ostrfpd_binary.bat' or '
 
 The OSTRFPD is supplied with untampered primer3_binaries for windows (primer3_core.exe) which can also be independetly downloaded and/or compiled from the official source (https://sourceforge.net/projects/primer3/files/primer3/1.1.4/) following the creators' instructions.
 
+
 IMPORTANT: Please note that both OSTRFPD binaries (or source) and primer3_core.exe should be in same location.
-
-
 
 
 In Linux:
 
 Open Linux Terminal and type the command (case sensitive).
-
 
 $ python3 ostrfpd.py -gui true
 
