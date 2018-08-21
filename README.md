@@ -134,8 +134,8 @@ the "--help" arguments will give a standard python help for all command syntax a
 
 ##Command syntax:
 
-python3 my_ms_gui.exe --help
-usage: my_ms_gui.exe [-h] [-input INPUT] [-output OUTPUT] [-unit UNIT]
+python3 ostrfpd.py --help
+usage: ostrfpd.py    [-h] [-input INPUT] [-output OUTPUT] [-unit UNIT]
                      [-min MIN] [-imperfect IMPERFECT] [-lflank LFLANK]
                      [-rflank RFLANK] [-exclude {None,true,false}]
                      [-imop IMOP] [-mop MOP] [-scan {None,dna,rna,protein}]
