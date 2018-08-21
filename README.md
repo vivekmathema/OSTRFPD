@@ -30,15 +30,15 @@ Whereby you should be able to download and install 32 or 64 bit version of  Pyth
 Depending upon your python pip or pip3 should be fine. Please follow 'upgrade pip' instruction if you need to upgarde your pip for latest version and compability issues.
 
 
-```
+
 pip3 install PyQt5==5.9.1 
-```
+
 which should result in installation of PyQt5 plugin required for GUI of OSTRFPD
 
 
-``
+
 pip3 install biopython==1.72   or  pip3 install biopython
-```
+
 which should result in installation of biopython and its sub-dependencies
 
 
@@ -46,10 +46,10 @@ which should result in installation of biopython and its sub-dependencies
 (OPTIONAL)
 For windows
 
-```  
+
 pip3 install pyinstaller==3.3.1
 
-```
+
 This will generate standalone 'ostrfpd.exe' binary for windows.
 
 
@@ -68,9 +68,10 @@ In Windows:
 
 Open windows console (can be initaited by typing cmd.exe in startup box) and type the command (case sensitive).
 
-```
+
 python3 ostrfpd.py -gui true
-```
+
+
 This should start OSTRFPD in userfriendly GUI mode contaning builtin helper tooltip text, self-explainatory buttons and basic level of error handeling interface.
 
 
@@ -87,9 +88,9 @@ In Linux:
 
 Open Linux Terminal and type the command (case sensitive).
 
-```
+
 $ python3 ostrfpd.py -gui true
-```
+
 
 Please note that OSTRFPD is supplied with untampered standard Primer3 (ver 1.1.4) binary 'primer3_core' (plugin) which can be directly run.
 
@@ -102,15 +103,15 @@ IMPORTANT: Please note that both OSTRFPD binaries (or source file 'ostrfpd.py') 
 
 Typically for Linux users (here, I use ububtu 16.04) the PATH variable should be set to the location from where 'primer3_core',  'ostrfpd.py' or equivalent binary is expected to be run. A typical example is given below. In terminal with likely'sudo previliges' type your path where 'ostrfpd.py' files are located.
 
-```
+
 export PATH=/home/user/Documents/OSTRFPD/:$PATH
-```
+
 
 Optionally, if users chooses to compile the source using pyinstaller and then use the binary,please use the command below from OSTRFPD directory to generate linux binaries.
 
-```
+
 $ pyinstaller -D -F -n ostrfpd -c "ostrfpd.py"
-```
+
 
 which should creat linux compatible binary 'ostrfpd' in OSTRFPD\dist folder, which can then be copied to the base OSTRFPD folder containing 'primer3_core' binary.
 
@@ -119,9 +120,9 @@ Then initiate the OSTRFPD (for graphical interface) using:
 
 (i) from source
 
-```
+
 $ python ostrfpd.py -gui true 
-```
+
 
 (ii) from supplied binary
 
