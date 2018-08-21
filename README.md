@@ -17,7 +17,6 @@ In addition to Python (version 3.5 or above) the dependencies mentioned in 'requ
 Both source and binaries of OSTRFPD have been successfully tested in Windows 7,10 and Linux Ubuntu 16.04 with correctly installed dependencies
 
 
-
 ## Installation
 
 ```
@@ -27,12 +26,10 @@ Whereby you should be able to download and install 32 or 64 bit version of  Pyth
 
 Depending upon your python pip or pip3 should be fine. Please follow 'upgrade pip' instruction if you need to upgarde your pip for latest version and compability issues.
 
-
 ```
 pip3 install PyQt5==5.9.1 
 ```
 which should result in installation of PyQt5 plugin required for GUI of OSTRFPD
-
 
 ``
 pip3 install biopython==1.72   or  pip3 install biopython
@@ -41,28 +38,25 @@ which should result in installation of biopython and its sub-dependencies
 
 
 
-##(OPTIONAL) For windows
+(OPTIONAL) For windows
+
 ```  
 pip3 install pyinstaller==3.3.1
 
 ```
-
-
 This will generate standalone 'ostrfpd.exe' binary for windows.
 
 
-
-## Execution
+Execution
 
 From here onwards, we assume that user have downloaded the file and uncompressed all content into 'OSTRFPD' folder which should at least contain 'ostrfpd.py', 'primer3_core' (optional plugin for primer creation), binaries (optional'ostrfpd.exe' for windows or linux 'ostrfpd' binary for linux) and dictionary files (optional) for the software t ocowrk properly.
 
 OSTRFPD can be run in either user-firendly GUI mode or command line interface (CLI). 
 
-
 The GUI mode can be initalized by simple argument "-gui true".
 
 
-##In Windows:
+In Windows:
 
 Open windows console (can be initaited by typing cmd.exe in startup box) and type the command (case sensitive).
 
@@ -79,10 +73,7 @@ The OSTRFPD is supplied with untampered primer3_binaries for windows (primer3_co
 
 IMPORTANT: Please note that both OSTRFPD binaries (or source) and primer3_core.exe should be in same location.
 
-
-
-
-##In Linux:
+In Linux:
 
 Open Linux Terminal and type the command (case sensitive).
 
