@@ -12,7 +12,7 @@ The details of the software architecture and goals are described in the asscoiat
 
 OSPTFPD is an open source software destributed under General Public Liscence (GPL ver 3). Apart from standard python modules, The software imports some functions from the dependencies under the Terms and Conditions allowed under teh standard liscence.
 
-In addition to Python (version 3.5 or above) the dependencies mentioned in 'requirments.txt' can be installed using standard 'pip' installer for python
+In addition to Python (version 3.5 or above) the dependencies mentioned in 'requirements.txt' can be installed using standard 'pip' installer for python
 
 Both source and binaries of OSTRFPD have been successfully tested in Windows 7,10 and Linux Ubuntu 16.04 with correctly installed dependencies
 
