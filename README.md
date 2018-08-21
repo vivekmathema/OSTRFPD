@@ -41,13 +41,13 @@ which should result in installation of biopython and its sub-dependencies
 
 
 
-(OPTIONAL)
-For windows
-
+##(OPTIONAL) For windows
 ```  
 pip3 install pyinstaller==3.3.1
 
 ```
+
+
 This will generate standalone 'ostrfpd.exe' binary for windows.
 
 
@@ -62,7 +62,7 @@ OSTRFPD can be run in either user-firendly GUI mode or command line interface (C
 The GUI mode can be initalized by simple argument "-gui true".
 
 
-In Windows:
+##In Windows:
 
 Open windows console (can be initaited by typing cmd.exe in startup box) and type the command (case sensitive).
 
@@ -82,7 +82,7 @@ IMPORTANT: Please note that both OSTRFPD binaries (or source) and primer3_core.e
 
 
 
-In Linux:
+##In Linux:
 
 Open Linux Terminal and type the command (case sensitive).
 
@@ -141,7 +141,7 @@ the "--help" arguments will give a standard python help for all command syntax a
 
 
 
-Command syntax:
+##Command syntax:
 
 python3 my_ms_gui.exe --help
 usage: my_ms_gui.exe [-h] [-input INPUT] [-output OUTPUT] [-unit UNIT]
