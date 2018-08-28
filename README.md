@@ -10,7 +10,7 @@ OSTRFPD is a versatile, platform independent and open source integrated tool wri
 The details of the software architecture and goals are described in the asscoiated manuscript. We here focus on installation and command syntax.
 
 
-OSPTFPD is an open source software destributed under General Public Liscence (GPL ver 3). Apart from standard python modules, The software imports some functions from the dependencies under the Terms and Conditions allowed under teh standard liscence.
+OSPTFPD is an open source software destributed under General Public Liscence (GPL ver 3). Apart from standard python modules, The software imports some functions from the dependencies under the Terms and Conditions allowed under the standard liscence.
 
 In addition to Python (version 3.5 or above) the dependencies mentioned in 'requirements.txt' can be installed using standard 'pip' installer for python
 
