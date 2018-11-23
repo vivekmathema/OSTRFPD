@@ -16,6 +16,7 @@ In addition to Python (version 3.5 or above) the dependencies mentioned in 'requ
 
 Both source and binaries of OSTRFPD have been successfully tested in Windows 7,10 and Linux Ubuntu 16.04 with correctly installed dependencies
 
+[ WE HIGHLY RECOMMEND YOU TO USE WINDOWS VERSION OF THE PYTHON SOURCE CODE AND PRE-COMPILED BINARIES FOR MORE STABLE RUNNING OF THE PROGRAM]
 
 ## Installation
 
