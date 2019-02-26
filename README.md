@@ -225,8 +225,7 @@ The "--help" arguments will give a standard python help for all command syntax a
 
 Whenever feasible, a short description and example of default CLI argument is shown in helper tool-tip message on status bar in GUI mode as: “< -argument value >”.    
 
-
-usage: ostrfpd.py [-h] [-input INPUT] [-output OUTPUT] [-unitmax UNITMAX]
+Usage: ostrfpd.py [-h] [-input INPUT] [-output OUTPUT] [-unitmax UNITMAX]
                   [-unitmin UNITMIN] [-min MIN] [-imperfect IMPERFECT]
                   [-lflank LFLANK] [-rflank RFLANK]
                   [-exclude {None,true,false}] [-imop IMOP] [-mop MOP]
@@ -244,260 +243,132 @@ usage: ostrfpd.py [-h] [-input INPUT] [-output OUTPUT] [-unitmax UNITMAX]
                   [-pmxtm PMXTM] [-ptmdiff PTMDIFF] [-pogc POGC]
                   [-pmigc PMIGC] [-pmxgc PMXGC] [-pmpoly PMPOLY] [-v V]
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -input INPUT          Full pathname of input file (i.e. source FASTA file).
-                        If not supplied, the [input.fasta] file will be
-                        searched by default. Single, multi-FASTA and gunzip-
-                        compressed (.gz) FASTA are supported for direct scan
-                        without unzipping
-  -output OUTPUT        Full pathname of output result file. If not supplied,
-                        the < source filename + _res.txt > will be used as
-                        default output report file. The default output file is
-                        tab-delimited plain text file containing multiple
-                        parameters (e.g.: unit motif, repeat number, start
-                        stop position, flanking sequences). The output file
-                        can also be configured to contain built information
-                        and general motif statistics and categorization
-  -unitmax UNITMAX      Input type: positive integer. Sets the maximum unit
-                        motif length to be searched. If used with ‘-min’
-                        argument only MIN single unit fixed will be scanned.
-                        In Fast (default) search mode, the maximum values for
-                        DNA,RNA and Amino acid unit motifs are 10, 10 and 3
-                        bp|aa respectively. In Accurate search mode, the
-                        maximum values for DNA, RNA and Amino acid unit motifs
-                        are 6, 6 and 3 bp|aa respectively. In Dictionary-based
-                        search mode, the maximum values for DNA, RNA and Amino
-                        acid unit motifs is 30 bp|aa.
-  -unitmin UNITMIN      Input type: positive integer. This option sets the
-                        minimum unit motif length to be searched. Default
-                        values is 1. The UNITMIN can range from 1 to
-                        UNITMAX.If UNITMIN and UNITMAX are same, then single
-                        fixed length unit motif will be search. Use of [-fix
-                        true] argument will overwrite the ‘-unitmin UNITMIN’
-                        setting and forcefully set the UNITMIN = UNITMAX (i.e.
-                        single fixed unit motif.
-  -min MIN              Input type: Positive integer. Sets the minimum repeats
-                        (copy number) threshold for selection of tandemly
-                        repeated sequences. This option will overwrite MISA-
-                        formatted minimum repeat settings (if present). By
-                        default the MIN value is 0 (i.e. OFF).
-  -imperfect IMPERFECT  Maximum distance (aa|bp) within which the mismatch
-                        (indel) containing tandem repeats but with same unit
-                        motif (seed) will be combined as single imperfect
-                        repeat. The value for argument ‘–imperfect’ > 0,
-                        automatically turns ON search for imperfect repeats as
-                        associated default score values [i.e. –imop, -mop,
-                        -mmp]
-  -lflank LFLANK        Input type: Positive integer. Extracts the left
-                        flanking sequence. This option auto-truncates the
-                        flanking sequence region if the left side sequence is
-                        smaller than supplied length (bp | aa) of flanking
-                        sequence. Default value is 85.
-  -rflank RFLANK        Input type: Positive integer. Extracts the right
-                        flanking sequence. This option auto-truncates the
-                        flanking sequence region if the right side sequence is
-                        smaller than supplied length (bp | aa) of flanking
-                        sequence. Default value is 85.
-  -exclude {None,true,false}
-                        Restricted or Strict mode. Ignores non-seed (aa|bp)
-                        containing imperfect microsatellites even if the non-
-                        seed mismatch occurred within pre-declared
-                        imperfection range. Default value is None or false.
-  -imop IMOP            Input type: positive integer. Penalty score for the
-                        first non-seed mismatch occurrence (added only once
-                        for an imperfect microsatellite independently on top
-                        of ‘-mop’ and ‘-mss’ parameter values). Default value
-                        is 3 and only applied if value for ‘-imperfect’ > 0
-                        (i.e. IMPERFECT mode is set ON).
-  -mop MOP              Input type: positive integer. Penalty score which is
-                        applied only once for the first (starting mismatch)
-                        occurrence to a given imperfect microsatellite.
-                        Default value is 2 only applied if value for
-                        ‘-imperfect’ > 0 (i.e. IMPERFECT mode is set ON).
-  -scan {None,dna,rna,protein}
-                        Sets the expected source sequence type to DNA, RNA, or
-                        PROTEIN. Default value is set to dna
-  -mmp MMP              Input type: positive integer. Set the penalty for each
-                        mismatch (seed or non-seed type). It is added on top
-                        of mismatch starting penalties supplied by '-impo'
-                        and/or '-mop' if present. Default value is 2 and only
-                        applied if value for ‘-imperfect’ > 0 (i.e. IMPERFECT
-                        mode is set ON).
-  -rcomp {None,true,false}
-                        Attaches the reverse complement sequence for DNA or
-                        RNA repeats including flanking sequence. Default value
-                        is None or false.
-  -misa MISA            MISA-formatted number series to input different
-                        minimum repeat number for different motif length.
-                        [e.g: -misa 14,7,5,4,4 for minimum repeat number of
-                        microsatellites with unit motif length of 1,2,3,4 and
-                        5, respectively]. Note that the minimum repeat values
-                        for misa should be supplied as
-                        [1,2,3,...,UNITMAX-1,UNITMAX] even if minimum unit
-                        motif length (UNITMIN)>1. The misa is automatically
-                        set as NULL if [-min] > 0. Default value of misa
-                        string for DNA or RNA is 14,7,5,4,4,4 and Protein is
-                        7,5,3,3 , respectively. Whenever possible do avoid
-                        using ‘-misa’ and ‘-min’ arguments together to make
-                        syntax clear for operation.
-  -eng {true,false}     Sets the unit motif sequence generator engine type for
-                        accurate fast or accurate search. Default value is
-                        [false] for fast but less efficient motif pattern
-                        search. If set ‘true’ then uses slow yet accurate
-                        engine.
-  -sshow {true,false}   Sets the display output ON/OFF for the scoring matrix
-                        on console screen during scan for each tandem repeats
-                        identified. Has no effect on output result file.
-                        Default value is false. This option is forced turn OFF
-                        if [-sdout] is false
-  -fsc FSC              Used as positive integers in the format ‘m,n’ (Typical
-                        use: [-fsc 1,5] or [-fsc 1,6]). Default status is OFF
-                        or None. Filters out the microsatellites if a minimum
-                        of 'm' unit motif length tandem repeat of minimum 'n'
-                        repeat number (copy number) is found in Left or Right
-                        flanking sequence. Note: The option is useful for
-                        removing microsatellites from results whose low-
-                        numbered repeats may cause problem in primer design.
-  -pfname PFNAME        Full pathname of primer result output file to be
-                        saved. If not supplied, by default the output name
-                        will be used as [source filename + ‘_prm.txt’].The
-                        output is a tad-delimited plain text file. The primer
-                        output file will contain Sequence IDs of primer
-                        derived from the original sequences from which the
-                        primers were designed. In addition to left (forward)
-                        and right (reverse) primers, the corresponding
-                        standardized unit motifs, motif copy number, Tm and
-                        complete sequence (Left flanking+ microsatellite +
-                        right flanking) will be tabulated in the primer result
-                        file.
-  -fix {true,false}     Sets a single fixed minimum repeats (copy number) for
-                        all unit motifs. This option will overwrite MISA
-                        settings (if present). Default value is false.
-  -primer {true,false}  Sets the flag to make primer using Primer3. Default
-                        value is false.
-  -std {None,true,false}
-                        Standardizes the unit motif (seed) name for display
-                        and report in either Partial:[cyclic equivalent
-                        motifs] or Full: [reverse complement + cyclic
-                        equivalents ]. Default is set to Full standardization.
-                        See citation paper for details. General statistics
-                        results for motif characterization will also be
-                        formatted based on the type of motif standardization.
-                        For Protein sequence, as there are no complement
-                        strands, only partial standardization is utilized for
-                        amino acid unit motif characterization.
-  -dict DICT            [Usage: -dict filename]. Dictionary file is a plain
-                        text file contaning list of unit motifs of same type
-                        molecules (DNA, RNA, or amino acids) each separated by
-                        new line. Dictionary file is used to exclusively
-                        search custom user-supplied unit motif sequences. If
-                        used, only the unit motifs listed in the dictionary
-                        file (e.g. dict_dna.txt) will be searched for a single
-                        fixed (default: -fix true) length (default: -unit 8)
-                        unit motifs of maximum upto 30 bp and fixed minimum
-                        repeat number (default: -min 4). This mode [-dict] is
-                        expected to be used together with [-unit, -fix and
-                        -min] parameters. 
-			Extended Information for dictionary mode special usage: During runtime, 
-			all duplicates or equivalent (cyclic as well as complementary) motifs
-			from supplied dictionary file will be filtered out and only unique standardized
-			motifs will be used for searching. This mode may also be used to roughly 
-			estimate density of certain oligonucleotides (14-30 bp) or signaling peptides
-			(14-30 aa). In case of oligonucleotide (e.g.: transcription factor binding 
-			sequence) or special short peptide sequences (e.g.: signaling peptide), a fixed
-			minimum repeat value of 1 (i.e. ‘–min 1’) may be used to roughly quantify their
-			genome- or proteome-wide occurrence or densities. However, the feature is
-			experimental and future improvements will be done accordingly. 
-			We recommend using GUI mode for easy operation of this feature.
-			
-  -fasta {true,false}   Sets the output result to FASTA formatted file. File
-                        description, motif statistics or built headers is NOT
-                        available for this Mode. If output filename is not
-                        supplied source filename + ‘_res.txt’ will we written
-                        as default output. Default values if false.
-  -sdout {true,false}   Sets the standard result display flag for console or
-                        terminal. If true, displays each identified repeat
-                        result on console or terminal screen. If set false,
-                        only the Sequence IDs being search along with
-                        cumulative frequency (C.Freq |total|) of identified
-                        repeats and primer designed (Total primers designed)
-                        will be shown. Has no effect on output result file. If
-                        False, Default value is false.
-  -gap GAP              Input type: Positive integer. Sets minimum gaps ( aa |
-                        bp ) between two consecutive repeat motifs. Please
-                        note that all consecutive repeats identified within
-                        the range will be discarded even if it belongs to same
-                        motif type. Default value is zero. The default value
-                        is 0.
-  -sim SIM              Input type: positive integer. Sets the minimum
-                        similarity threshold value (in percentage, e.g: -sim
-                        50 for 50 percent) for the results to be accepted on
-                        top of other selection criteria supplied. Similarity
-                        basically refers to percentage of complete unit motifs
-                        present in the imperfect repeat sequence compared to
-                        its near equivalent perfect repeat. All perfect
-                        repeats have similarity value of 100 percent (See
-                        citation paper for details). Default value is 50.
-  -stats {true,false}   Displays and append basic statistics of the results to
-                        output file (option not applicable for FASTA output)
-  -report {true,false}  Appends Built header on top and Basic statistics
-                        report at the end of the output file (not applicable
-                        for FASTA output)
-  -align {None,true,false}
-                        Output the report file in alignment form (not
-                        applicable for FASTA or Custom format)
+Description of each arguments:
+
+-h, --help             Shows help message and exits the program. 
+
+ -input INPUT       	Full pathname of input file (i.e. source FASTA file). If not supplied, the "input.fasta" file will be searched by default. Single, multi-FASTA and gunzip-compressed (.gz) FASTA are supported for direct scan without unzipping.
+
+ -output OUTPUT     	Full pathname of output result file. If not supplied, the <source filename + "_res.txt"> will be used as default output report file. The default output file is tab-delimited plain text file containing multiple parameters (e.g.: unit motif, repeat number, start stop position, flanking sequences). The output file can also be configured to contain built information and general motif statistics and categorization. 
+	Note: the file can be imported in Microsoft excel by changing the file extension to .xls for further processing.
+
+-primer {true,false}     	Sets the flag to make primer using Primer3. Default value is false.
+  
+  -pfname PFNAME      	Full pathname of primer result output file to be saved. If not supplied, by default the output name will be used as [source filename + ‘_prm.txt’].The output is a tad-delimited plain text file. The primer output file will contain Sequence IDs of primer derived from the original sequences from which the primers were designed. In addition to left (forward) and right (reverse) primers, the corresponding standardized unit motifs, motif copy number, Tm and complete sequence (Left flanking+ microsatellite + right flanking) will be tabulated in the primer result file.
+Note: the file can be imported in Microsoft excel by changing the file extension to .xls for further processing.
+
+-scan {None, dna, rna, protein}		Sets the expected source sequence type to DNA, RNA, or PROTEIN. Default   value is set to dna.
+
+-unitmax UNITMAX   Input type: positive integer. Sets the maximum unit motif length to be searched.
+	
+	If used with ‘-min’ argument only MIN single fixed unit will be scanned. 
+
+                   In Fast (default) search mode, the maximum values for DNA,RNA and Amino acid unit motifs are 10, 10 and 3 bp|aa respectively.
+
+                   In Accurate search mode, the maximum values for DNA, RNA and Amino acid unit motifs are 6, 6 and 3 bp|aa respectively.
+
+                     In Dictionary-based search mode, the maximum values for DNA, RNA and Amino acid unit motifs is 30 bp|aa.
+ 
+-unitmin UNITMIN    Input type: positive integer. This option sets the minimum unit motif length to be searched. Default values is 1. The UNITMIN can range from 1 to UNITMAX. 
+
+                     If UNITMIN and UNITMAX are same, then single fixed length unit motif will be search. Use of ‘-fix true’ argument will overwrite the ‘-unitmin UNITMIN’ setting and forcefully set the UNITMIN = UNITMAX (i.e. single fixed unit motif only). 
+
+-min MIN             Input type: Positive integer. Sets the minimum repeats (copy number) threshold for selection of tandemly repeated sequences. This option will overwrite MISA-formatted minimum repeat settings (if present). By default the MIN value is 0 (i.e. OFF). 
+
+  -fix {true,false}         Sets a single fixed minimum repeats (copy number) for all unit motifs. This option will overwrite MISA settings (if present). Default value is false.
+
+-misa MISA           MISA-formatted number series to input different minimum repeat number for different motif length. [e.g: -misa 14,7,5,4,4 for minimum repeat number of microsatellites with unit motif length of 1,2,3,4 and 5, respectively]. Note that the minimum repeat values for misa should be supplied as ‘1,2,3,...,UNITMAX-1,UNITMAX’ even if minimum unit motif length (UNITMIN)>1. The misa is automatically set as NULL if ‘-min’ > 0. Default value of misa string for DNA or RNA is ’14,7,5,4,4,4’ and Protein is ‘7,5,3,3’, respectively. Whenever possible do avoid using ‘-misa’ and ‘-min’ arguments together to make syntax clear for operation.
+
+-lflank LFLANK       Input type: Positive integer. Extracts the left flanking sequence. This option auto-truncates the flanking sequence region if the left side sequence is smaller than supplied length (bp | aa) of flanking sequence. Default value is 85.
+
+-rflank RFLANK       Input type: Positive integer. Extracts the right flanking sequence. This option Auto- truncates the flanking sequence region if the right side sequence is smaller than supplied length (bp | aa) of flanking sequence. Default value is 85.
+
+-fsc FSC              Used as positive integers in the format ‘m,n’ (Typical use: ‘-fsc 1,5’ or ‘-fsc 1,6’). Default status is OFF or None. Filters out the microsatellites if a minimum of 'm' unit motif length tandem repeat of minimum 'n' repeat number (copy number) is found in Left or Right flanking sequence. Note: The option is useful for removing microsatellites from results whose low-numbered repeats may cause problem in primer design. 
+
+-eng {true,false}         Sets the unit motif sequence generator engine type for accurate fast or accurate search. Default value is ‘false’ for fast but less efficient motif pattern search. If set ‘true’ then uses slow yet accurate engine. 
+
+                      Fast engine is recommend to use if required unit motif length ≤10 for nucleic acids and ≤3 for proteins. 
+                      Accurate engine is recommend to use if required unit motif length ≤6 for nucleic acids and ≤3 for proteins. 
+
+-std {None,true,false}  Standardizes the unit motif (seed) name for display and report in either             Partial:[cyclic equivalent motifs] or Full: [reverse complement + cyclic equivalents ]. Default is set to Full standardization. See citation paper for details. General statistics results for motif characterization will also be formatted based on the type of motif standardization. For Protein sequence, as there are no complement strands, only partial standardization is utilized for amino acid unit motif characterization. 
+
+-imperfect IMPERFECT
+                     Maximum distance (aa|bp) within which the mismatch (indel) containing tandem repeats but with same unit motif (seed) will be combined as single imperfect repeat. The value for argument ‘–imperfect’ > 0, automatically turns ON search for imperfect repeats as associated default score values [i.e. –imop, -mop, -mmp]
+
+-exclude {None, true, false}
+                      Restricted or Strict mode. Ignores non-seed (aa|bp) containing imperfect microsatellites even if the non-seed mismatch occurred within pre-declared imperfection range. Default value is None or false.
+
+-imop IMOP         Input type: positive integer. Penalty score for the first non-seed mismatch occurrence (added only once for an imperfect microsatellite independently on top of ‘-mop’ and ‘-mss’ parameter values). Default value is 3 and only applied if value for ‘-imperfect’ > 0 (i.e. IMPERFECT mode is set ON).
+
+-mop MOP            Input type: positive integer. Penalty score which is applied only once for the first (starting mismatch) occurrence to a given imperfect microsatellite. Default value is 2 only applied if value for ‘-imperfect’ > 0 (i.e. IMPERFECT mode is set ON).
+
+
+-mmp MMP          Input type: positive integer. Set the penalty for each mismatch (seed or non-seed type). It is added on top of mismatch starting penalties supplied by '-impo' and/or '-mop' if present. Default value is 2 and only applied if value for ‘-imperfect’ > 0 (i.e. IMPERFECT mode is set ON).
+
+-rcomp {None,true,false}
+                       Attaches the reverse complement sequence for DNA or RNA repeats including flanking sequence. Default value is None or false.
+
+-sdout {true,false}      Sets the standard result display flag for console or terminal. If true, displays each identified repeat result on console or terminal screen. If set false, only the Sequence IDs being search along with cumulative frequency (C.Freq | total | ) of identified repeats and primer designed ( Total primers designed) will be shown. Has no effect on output result file. If False, Default value is false.
+
+-sshow {true,false}       Sets the display output ON/OFF for the scoring matrix on console screen during scan for each tandem repeats identified. Has no effect on output result file. Default value is false. This option is forced turn OFF if ‘-sdout’ is false.
+
+  
+-dict DICT           [Usage: -dict filename]. Dictionary file is a plain text file contaning list of unit motifs of same type molecules (DNA, RNA, or amino acids) each separated by new line. Dictionary file is used to exclusively search custom user-supplied unit motif sequences. If used, only the unit motifs listed in the dictionary file (e.g. dict_dna.txt) will be searched for a single fixed (default: -fix true) length (default: -unit 8) unit motifs of maximum upto 30 bp and fixed minimum repeat number (default: -min 4). This mode [-dict] is expected to be used together with [-unit, -fix and -min] parameters.
+	
+Extended Information for dictionary mode special usage: During runtime, all duplicates or equivalent (cyclic as well as complementary) motifs from supplied dictionary file will be filtered out and only unique standardized motifs will be used for searching. This mode may also be used to roughly estimate density of certain oligonucleotides (14-30 bp) or signaling peptides (14-30 aa). In case of oligonucleotide (e.g.: transcription factor binding sequence) or special short peptide sequences (e.g.: signaling peptide), a fixed minimum repeat value of 1 (i.e. ‘–min 1’) may be used to roughly quantify their genome- or proteome-wide occurrence or densities. However, the feature is experimental and future improvements will be done accordingly. We recommend using GUI mode for easy operation of this feature.
+
+-align {None,true,false}
+                      Output the report file in alignment form (not applicable for FASTA or Custom format). 
+  
+-fasta {true,false}       Sets the output result to FASTA formatted file. File description, motif statistics or built headers is NOT available for this Mode. If output filename is not supplied source filename + ‘_res.txt’ will we written as default output. Default values if false.
+-imalign {None,true,false}
+                       Make the alignment output file only contain imperfect alignment results after satisfying all other applicable conditions. The alignment option will be automatically activated. Default value is None or false.
+
+
+
+  -gap GAP          Input type: Positive integer.  Sets minimum gaps ( aa | bp ) between two consecutive repeat motifs. Please note that all consecutive repeats identified within the range will be discarded even if it belongs to same motif type. Default value is zero. The default value is 0.
+
+  -sim SIM            Input type: positive integer. Sets the minimum similarity threshold value (in percentage, e.g: -sim 50 for 50%) for the results to be accepted on top of other selection criteria supplied. Similarity basically refers to percentage of complete unit motifs present in the imperfect repeat sequence compared to its near equivalent perfect repeat. All perfect repeats have similarity value of 100% (See citation paper for details). Default value is 50.
+  
+  -stats {true,false}     Displays and append basic statistics of the results to output file (option not      applicable for FASTA output)
+
+  -report {true,false}   Appends Built header on top and Basic statistics report at the end of the output file (not applicable for FASTA output)
+
   -autoexit {true,false}
-                        Sets auto exit flag. If true, auto exits after
-                        completion of task or pauses the console screen if
-                        false (applicable mainly for windows system GUI
-                        launcher). Default value is false.
-  -ltag LTAG            Attaches the left tag (e.g: 6FAM-) for the left primer
-                        generated by Primer3. Typical use (‘-ltag 6FAM-’).
-                        Default value is None.
-  -rtag RTAG            Attach the right tag (e.g: gtgtctt-) for the right
-                        primer generated by Primer3. Typical use [-rtag
-                        gtgtctt- ]. Default value is None
-  -imalign {None,true,false}
-                        Make the alignment output file only contain imperfect
-                        alignment results after satisfying all other
-                        applicable conditions. The alignment option will be
-                        automatically activated.
+                    Sets auto exit flag. If true, auto exits after completion of task or pauses the console screen if false (applicable mainly for windows system GUI launcher). Default value is false.
+
+  -ltag LTAG          Attaches the left tag (e.g: 6FAM-) for the left primer generated by Primer3. Typical use (‘-ltag 6FAM-’). Default value is None.
+
+  -rtag RTAG          Attach the right tag (e.g: gtgtctt-) for the right primer generated by Primer3. Typical use (‘-rtag gtgtctt-’). Default value is None.
+
   -gui {None,true,false}
-                        Open the OSTFRPD in GUI interface to input the
-                        configuration parameters. Using this option will
-                        OVERWRITE all other CLI arguments supplied and
-                        launches OSTRFPD is fresh default GUI mode. Default
-                        value is false.
-  -prng PRNG            Input type: String. Used to set min-max (e.g:
-                        150-300), the minimum and maximum range (in bp) of the
-                        output primers product (amplicon size). Default value
-                        is 150-300.
-  -posz POSZ            Input type: positive integer. Used to set the optimum
-                        primer length (in Bp). Default value is 20
-  -pmisz PMISZ          Input type: positive integer. Used to set the minimum
-                        primer length (in Bp). Default value is 17
-  -pmxsz PMXSZ          Input type: positive integer. Used to set the maximum
-                        primer length (in Bp). Default value is 26
-  -potm POTM            Input type: positive integer. Used to set the optimum
-                        primer Tm (C). Default value is 60
-  -pmitm PMITM          Input type: positive integer. Used to set the minimum
-                        primer Tm (C). Default value is 58
-  -pmxtm PMXTM          Input type: positive integer. Used to set the maximum
-                        primer Tm (C). Default value is 63
-  -ptmdiff PTMDIFF      Input type: positive integer. Used to set the maximum
-                        primer Tm (C) difference. Default value is 6
-  -pogc POGC            Input type: positive integer. Used to set the optimum
-                        GC content (given in percentage). Default value is 55
-  -pmigc PMIGC          Input type: positive integer. Used to set the minimum
-                        GC content (given in percentage). Default value is 20
-  -pmxgc PMXGC          Input type: positive integer. Used to set the maximum
-                        GC content. Default value is 80
-  -pmpoly PMPOLY        Input type: positive integer. Used to set the maximum
-                        Poly-X's in primer. Default value is 3
-  -v V                  (O)mni (S)hort (T)andem (R)epeat (F)inder & (P)rimer
-                        (D)esigner: OSTRFPD Version 0.01. Developed by Mathema
-                        VB and Imwong M - 2018.(under review...)
+                       Open the OSTFRPD in GUI interface to input the configuration parameters. Using this option will OVERWRITE all other CLI arguments supplied and launches OSTRFPD is fresh default GUI mode. Default value is false.
+
+  -prng PRNG         Input type: String. Used to set min-max (e.g: 150-300), the minimum and maximum range (in bp) of the output primers product (amplicon size). Default value is 150-300.
+
+  -posz POSZ           Input type: positive integer. Used to set the optimum primer length (in Bp). Default value is 20.
+
+  -pmisz PMISZ         Input type: positive integer. Used to set the minimum primer length (in Bp).     Default value is 17.
+
+  -pmxsz PMXSZ        Input type: positive integer. Used to set the maximum primer length (in Bp). Default value is 26.
+
+  -potm POTM          Input type: positive integer. Used to set the optimum primer Tm (◦C). Default value is 60.
+
+  -pmitm PMITM       Input type: positive integer. Used to set the minimum primer Tm (◦C). Default value is 58.
+
+  -pmxtm PMXTM      Input type: positive integer. Used to set the maximum primer Tm (◦C). Default value is 63.
+
+  -ptmdiff PTMDIFF    Input type: positive integer. Used to set the maximum primer Tm (◦C) difference. Default value is 6.
+
+  -pogc POGC          Input type: positive integer. Used to set the optimum GC content (given in percentage). Default value is 55.
+
+  -pmigc PMIGC        Input type: positive integer. Used to set the minimum GC content (given in percentage). Default value is 20.
+
+  -pmxgc PMXGC       Input type: positive integer. Used to set the maximum GC content. Default value is 80.
+
+  -pmpoly PMPOLY     Input type: positive integer. Used to set the maximum Poly-X's in primer. Default value is 3.
+
+  -v V          	Shows the current version information and basic information regarding the authors, information for citations, and software repository for OSTRFPD. (This section will be finalized upon manuscript acceptance)
 
  =================================================================
 
