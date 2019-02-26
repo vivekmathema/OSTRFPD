@@ -259,19 +259,9 @@ Note: the file can be imported in Microsoft excel by changing the file extension
 
 -scan {None, dna, rna, protein}		Sets the expected source sequence type to DNA, RNA, or PROTEIN. Default   value is set to dna.
 
--unitmax UNITMAX   Input type: positive integer. Sets the maximum unit motif length to be searched.
-	
-	If used with ‘-min’ argument only MIN single fixed unit will be scanned. 
-
-                   In Fast (default) search mode, the maximum values for DNA,RNA and Amino acid unit motifs are 10, 10 and 3 bp|aa respectively.
-
-                   In Accurate search mode, the maximum values for DNA, RNA and Amino acid unit motifs are 6, 6 and 3 bp|aa respectively.
-
-                     In Dictionary-based search mode, the maximum values for DNA, RNA and Amino acid unit motifs is 30 bp|aa.
+-unitmax UNITMAX   Input type: positive integer. Sets the maximum unit motif length to be searched. If used with ‘-min’ argument only MIN single fixed unit will be scanned. In Fast (default) search mode, the maximum values for DNA,RNA and Amino acid unit motifs are 10, 10 and 3 bp|aa respectively.In Accurate search mode, the maximum values for DNA, RNA and Amino acid unit motifs are 6, 6 and 3 bp|aa respectively.In Dictionary-based search mode, the maximum values for DNA, RNA and Amino acid unit motifs is 30 bp|aa.
  
--unitmin UNITMIN    Input type: positive integer. This option sets the minimum unit motif length to be searched. Default values is 1. The UNITMIN can range from 1 to UNITMAX. 
-
-                     If UNITMIN and UNITMAX are same, then single fixed length unit motif will be search. Use of ‘-fix true’ argument will overwrite the ‘-unitmin UNITMIN’ setting and forcefully set the UNITMIN = UNITMAX (i.e. single fixed unit motif only). 
+-unitmin UNITMIN    Input type: positive integer. This option sets the minimum unit motif length to be searched. Default values is 1. The UNITMIN can range from 1 to UNITMAX.If UNITMIN and UNITMAX are same, then single fixed length unit motif will be search. Use of ‘-fix true’ argument will overwrite the ‘-unitmin UNITMIN’ setting and forcefully set the UNITMIN = UNITMAX (i.e. single fixed unit motif only). 
 
 -min MIN             Input type: Positive integer. Sets the minimum repeats (copy number) threshold for selection of tandemly repeated sequences. This option will overwrite MISA-formatted minimum repeat settings (if present). By default the MIN value is 0 (i.e. OFF). 
 
@@ -285,10 +275,7 @@ Note: the file can be imported in Microsoft excel by changing the file extension
 
 -fsc FSC              Used as positive integers in the format ‘m,n’ (Typical use: ‘-fsc 1,5’ or ‘-fsc 1,6’). Default status is OFF or None. Filters out the microsatellites if a minimum of 'm' unit motif length tandem repeat of minimum 'n' repeat number (copy number) is found in Left or Right flanking sequence. Note: The option is useful for removing microsatellites from results whose low-numbered repeats may cause problem in primer design. 
 
--eng {true,false}         Sets the unit motif sequence generator engine type for accurate fast or accurate search. Default value is ‘false’ for fast but less efficient motif pattern search. If set ‘true’ then uses slow yet accurate engine. 
-
-                      Fast engine is recommend to use if required unit motif length ≤10 for nucleic acids and ≤3 for proteins. 
-                      Accurate engine is recommend to use if required unit motif length ≤6 for nucleic acids and ≤3 for proteins. 
+-eng {true,false}         Sets the unit motif sequence generator engine type for accurate fast or accurate search. Default value is ‘false’ for fast but less efficient motif pattern search. If set ‘true’ then uses slow yet accurate engine.Fast engine is recommend to use if required unit motif length ≤10 for nucleic acids and ≤3 for proteins.Accurate engine is recommend to use if required unit motif length ≤6 for nucleic acids and ≤3 for proteins. 
 
 -std {None,true,false}  Standardizes the unit motif (seed) name for display and report in either             Partial:[cyclic equivalent motifs] or Full: [reverse complement + cyclic equivalents ]. Default is set to Full standardization. See citation paper for details. General statistics results for motif characterization will also be formatted based on the type of motif standardization. For Protein sequence, as there are no complement strands, only partial standardization is utilized for amino acid unit motif characterization. 
 
