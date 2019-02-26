@@ -245,27 +245,27 @@ Usage: ostrfpd.py [-h] [-input INPUT] [-output OUTPUT] [-unitmax UNITMAX]
 
 Description of each arguments:
 
--h, --help             Shows help message and exits the program. 
+-h, --help 	            Shows help message and exits the program. 
 
- -input INPUT       	Full pathname of input file (i.e. source FASTA file). If not supplied, the "input.fasta" file will be searched by default. Single, multi-FASTA and gunzip-compressed (.gz) FASTA are supported for direct scan without unzipping.
+ -input INPUT    	   	Full pathname of input file (i.e. source FASTA file). If not supplied, the "input.fasta" file will be searched by default. Single, multi-FASTA and gunzip-compressed (.gz) FASTA are supported for direct scan without unzipping.
 
- -output OUTPUT     	Full pathname of output result file. If not supplied, the <source filename + "_res.txt"> will be used as default output report file. The default output file is tab-delimited plain text file containing multiple parameters (e.g.: unit motif, repeat number, start stop position, flanking sequences). The output file can also be configured to contain built information and general motif statistics and categorization. 
+ -output OUTPUT     		Full pathname of output result file. If not supplied, the <source filename + "_res.txt"> will be used as default output report file. The default output file is tab-delimited plain text file containing multiple parameters (e.g.: unit motif, repeat number, start stop position, flanking sequences). The output file can also be configured to contain built information and general motif statistics and categorization. 
 	Note: the file can be imported in Microsoft excel by changing the file extension to .xls for further processing.
 
--primer {true,false}     	Sets the flag to make primer using Primer3. Default value is false.
-  
-  -pfname PFNAME      	Full pathname of primer result output file to be saved. If not supplied, by default the output name will be used as [source filename + ‘_prm.txt’].The output is a tad-delimited plain text file. The primer output file will contain Sequence IDs of primer derived from the original sequences from which the primers were designed. In addition to left (forward) and right (reverse) primers, the corresponding standardized unit motifs, motif copy number, Tm and complete sequence (Left flanking+ microsatellite + right flanking) will be tabulated in the primer result file.
+-primer {true,false}		Sets the flag to make primer using Primer3. Default value is false.
+  	
+  -pfname PFNAME  	    	Full pathname of primer result output file to be saved. If not supplied, by default the output name will be used as [source filename + ‘_prm.txt’].The output is a tad-delimited plain text file. The primer output file will contain Sequence IDs of primer derived from the original sequences from which the primers were designed. In addition to left (forward) and right (reverse) primers, the corresponding standardized unit motifs, motif copy number, Tm and complete sequence (Left flanking+ microsatellite + right flanking) will be tabulated in the primer result file.
 Note: the file can be imported in Microsoft excel by changing the file extension to .xls for further processing.
 
--scan {None, dna, rna, protein}		Sets the expected source sequence type to DNA, RNA, or PROTEIN. Default   value is set to dna.
+-scan {None, dna, rna, protein}			Sets the expected source sequence type to DNA, RNA, or PROTEIN. Default   value is set to dna.
 
--unitmax UNITMAX   Input type: positive integer. Sets the maximum unit motif length to be searched. If used with ‘-min’ argument only MIN single fixed unit will be scanned. In Fast (default) search mode, the maximum values for DNA,RNA and Amino acid unit motifs are 10, 10 and 3 bp|aa respectively.In Accurate search mode, the maximum values for DNA, RNA and Amino acid unit motifs are 6, 6 and 3 bp|aa respectively.In Dictionary-based search mode, the maximum values for DNA, RNA and Amino acid unit motifs is 30 bp|aa.
+-unitmax UNITMAX 	  Input type: positive integer. Sets the maximum unit motif length to be searched. If used with ‘-min’ argument only MIN single fixed unit will be scanned. In Fast (default) search mode, the maximum values for DNA,RNA and Amino acid unit motifs are 10, 10 and 3 bp|aa respectively.In Accurate search mode, the maximum values for DNA, RNA and Amino acid unit motifs are 6, 6 and 3 bp|aa respectively.In Dictionary-based search mode, the maximum values for DNA, RNA and Amino acid unit motifs is 30 bp|aa.
  
--unitmin UNITMIN    Input type: positive integer. This option sets the minimum unit motif length to be searched. Default values is 1. The UNITMIN can range from 1 to UNITMAX.If UNITMIN and UNITMAX are same, then single fixed length unit motif will be search. Use of ‘-fix true’ argument will overwrite the ‘-unitmin UNITMIN’ setting and forcefully set the UNITMIN = UNITMAX (i.e. single fixed unit motif only). 
+-unitmin UNITMIN 	   Input type: positive integer. This option sets the minimum unit motif length to be searched. Default values is 1. The UNITMIN can range from 1 to UNITMAX.If UNITMIN and UNITMAX are same, then single fixed length unit motif will be search. Use of ‘-fix true’ argument will overwrite the ‘-unitmin UNITMIN’ setting and forcefully set the UNITMIN = UNITMAX (i.e. single fixed unit motif only). 
 
--min MIN             Input type: Positive integer. Sets the minimum repeats (copy number) threshold for selection of tandemly repeated sequences. This option will overwrite MISA-formatted minimum repeat settings (if present). By default the MIN value is 0 (i.e. OFF). 
+-min MIN    	         Input type: Positive integer. Sets the minimum repeats (copy number) threshold for selection of tandemly repeated sequences. This option will overwrite MISA-formatted minimum repeat settings (if present). By default the MIN value is 0 (i.e. OFF). 
 
-  -fix {true,false}         Sets a single fixed minimum repeats (copy number) for all unit motifs. This option will overwrite MISA settings (if present). Default value is false.
+-fix {true,false}         Sets a single fixed minimum repeats (copy number) for all unit motifs. This option will overwrite MISA settings (if present). Default value is false.
 
 -misa MISA           MISA-formatted number series to input different minimum repeat number for different motif length. [e.g: -misa 14,7,5,4,4 for minimum repeat number of microsatellites with unit motif length of 1,2,3,4 and 5, respectively]. Note that the minimum repeat values for misa should be supplied as ‘1,2,3,...,UNITMAX-1,UNITMAX’ even if minimum unit motif length (UNITMIN)>1. The misa is automatically set as NULL if ‘-min’ > 0. Default value of misa string for DNA or RNA is ’14,7,5,4,4,4’ and Protein is ‘7,5,3,3’, respectively. Whenever possible do avoid using ‘-misa’ and ‘-min’ arguments together to make syntax clear for operation.
 
