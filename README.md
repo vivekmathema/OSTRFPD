@@ -108,6 +108,7 @@ OSTRFPD_v0.01
 |-----dict_protein.txt
 |-----input.fasta
 |-----requirments.txt
+|-----run_info_readme.txt
 |-----LICENCE
 |-----rna_seq             (Note: subfolder)
      |-----ribosome1_seq_URS0000857690.fasta
