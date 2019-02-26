@@ -363,5 +363,5 @@ Dr. Vivek Bhakta Mathema
 
 Source code maintainer 
 Please feel free to get in touch with comments, suggestions and any form of queries. Your feedback will help us improve OSTRFPD and assist researchers to achieve their goals.
-Best wishes,
+Best wishes.
 
