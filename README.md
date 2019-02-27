@@ -201,7 +201,7 @@ $ ./ostrfpd -gui true
 Note: Please refer to the Typical Structure of the OSTRFPD Folder for maintaining correct folder structure of OSTRFPD.
 
 ## BARCHART DISPLAY FOR THE CATAGORIZED MOTIF FREQUENCIES
-This EITIRELY OPTIONAL segment of the code allows interested advance users to directly generate bar charts of the motif frequencies for visualization using additional ‘matplot’ and ‘numpy’ library of the python.
+This ENTIRELY OPTIONAL segment of the code allows interested advance users to directly generate bar charts of the motif frequencies for visualization using additional ‘matplot’ and ‘numpy’ library of the python.
 Most distribution of Matplotlib and numpy should be compatible with this code. Typically follow installation for dependencies should work file:
 ```
 pip3 install matplotlib==2.2.2 [tested for matplot version 2.2.2 ]
