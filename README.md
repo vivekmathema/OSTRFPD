@@ -165,7 +165,7 @@ export PATH=/home/user/Documents/OSTRFPD/:$PATH
 
 ```
 
-Optionally, if users chooses to compile the ostrfpd.py from source using LINUX version of pyinstaller (Refer to pyinstaller installation for Windows) and then use the binary, please follow the command below from OSTRFPD directory to generate LINUX binaries. 
+Optionally, if users choose to compile the ostrfpd.py from source using LINUX version of pyinstaller (Refer to pyinstaller installation for Windows) and then use the binary, please follow the command below from OSTRFPD directory to generate LINUX binaries. 
 
 ```
 $ pyinstaller -D -F -n ostrfpd --onefile -c "ostrfpd.py"
@@ -177,7 +177,7 @@ This should create linux compatible binary 'ostrfpd' in /OSTRFPD/dist folder, wh
 
 Necessary sudo user privileges may have to be acquired depending upon system administrative settings.
 
-After compilation or to directly use the supplied pre-built binaries (both ostrfpd and primer3_core) the users may have make the file executable using:
+After compilation or to directly use the supplied pre-built binaries (both ostrfpd and primer3_core) the users may have to make these finary file executable in Linux using:
 ```
 chmod +x app-name (e.g.: ‘chmod +x ostrfpd’ and ‘chmod +x primer3_core’) command and then execute the ostrfpd binary from terminal as:  
 
@@ -198,13 +198,13 @@ $ python3 ostrfpd.py -gui true
 $ ./ostrfpd -gui true
 ```
 
-Note: Please refer to the Typical Structure of the OSTRFPD Folder for maintaining correct folder structure of OSTRFPD.
+Note: Please refer to the '##TYPICAL STRUCTURE OF THE OSTRFPD FOLDER' for maintaining correct folder structure for running OSTRFPD.
 
 ## BARCHART DISPLAY FOR THE CATAGORIZED MOTIF FREQUENCIES
 This ENTIRELY OPTIONAL segment of the code allows interested advance users to directly generate bar charts of the motif frequencies for visualization using additional ‘matplot’ and ‘numpy’ library of the python.
-Most distribution of Matplotlib and numpy should be compatible with this code. Typically follow installation for dependencies should work file:
+Most distribution of Matplotlib and numpy should be compatible with this code. Supplied installation version for dependencies should work file:
 ```
-pip3 install matplotlib==2.2.2 [tested for matplot version 2.2.2 ]
+pip3 install matplotlib==2.2.2 [tested for matplot version 2.2.2]
 pip3 install numpy==1.14.5  [ tested for numpy version 1.14.5]  
 ```
 To activate the bar chart drawing module in code, please uncomment following sections in the ostrfpd.py source code.
@@ -224,7 +224,7 @@ Since GUI mode has almost full-fledge features in comparison to CLI mode, whenev
 
 A list of arguments and their description is given below:-
 
-The "--help" arguments will give a standard python help for all command syntax and associated description. Except for the python default argument “--help’, all of the OSTRFPD CLI arguments beings with single negative (-) sign followed by argument name (i.e.: -argument) and the numeric values are represented by uppercase word of the argument. 
+The "--help" arguments will give a standard python help for all command syntax and associated description. Except for the python default argument “--help", all of the OSTRFPD CLI arguments beings with single negative (-) sign followed by argument name (i.e.: -argument) and the numeric values are represented by uppercase word of the argument. 
 
 Whenever feasible, a short description and example of default CLI argument is shown in helper tool-tip message on status bar in GUI mode as: “< -argument value >”.    
 
@@ -364,7 +364,7 @@ Extended Information for dictionary mode special usage: During runtime, all dupl
 
 Dr. Vivek Bhakta Mathema  
 
-Source code maintainer 
+(Source code maintainer) 
 Please feel free to get in touch with comments, suggestions and any form of queries. Your feedback will help us improve OSTRFPD and assist researchers to achieve their goals.
 Best wishes.
 
