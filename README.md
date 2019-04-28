@@ -15,9 +15,6 @@ This document consists of supplementary information including installation manua
 OSTRFPD is a versatile, platform independent open source tool written in python that enables identification and analysis of genome-wide short tandem repeats (STRs) in nucleic acids (DNA and RNA) and protein sequences supplied as FASTA formatted files. OSTRFPD is designed to run with full-features in both command line interface (CLI) or graphical user interface (GUI) mode based on users’ requirement. OSTRFPD can detect both perfect and imperfect repeats of low complexity with customizable scores. The software has built-in architecture to simultaneously refine selection of flanking regions in DNA and automatically generate microsatellite-targeted primers implementing Primer3 platform as a single step integrated operation. The software has built-in fast and accurate motif generator engines and additional option to use dictionary mode (optimized for searching longer repeats). Dictionary file containing common deoxynucleotide and amino acid motifs observed in Plasmodium species has been bundled together with the software. Completion of each search generates result along with general statistics containing motif categorization, repeat frequencies, densities, coverage, %GC (both source and microsatellites) content and simple text-based imperfect alignment visualization. The implementation of OSTRFPD is demonstrated using publicly available whole genome sequence of selected Plasmodium species.
 The Software and source code is freely available at: https://github.com/vivekmathema/OSTRFPD
 ```
-PASSWORD For the full source code will be removed within 2-3 days after the online publication of the article.
-```
-```
 Citation: Mathema VB, Dondorp AM, Imwong M (2019) OSTRFPD: Multifunctional tool for genome-wide short tandem repeat analysis for DNA, transcripts and amino acid sequences with integrated primer designer. Evolutionary Bioinformatics.DOI: 10.1177/1176934319843130
 ```
 
@@ -50,11 +47,11 @@ Both source and binaries of OSTRFPD have been successfully tested in Windows 7, 
 ## DOWNLOAD LINKS FOR FULL SOURCE CODE AND PRE-COMPILED BINARIES 
 
 
-1) WINDOWS PACKAGE (full source code + pre-compiled binaries + example fasta files):  [revised version]
+1) WINDOWS PACKAGE (full source code + pre-compiled binaries + example fasta files):  [release version]
 Link: https://drive.google.com/file/d/1tdU-4b9AeCsCJNp2NjAN2r47f34ELnYq/view?usp=sharing
 
-2) LINUX PACKAGE (full source code + pre-compiled binaries + example fasta files):    [revised version]
-Link: https://drive.google.com/file/d/1Ly2F5OvA1FHAZtXhWeYZXZbEPDSjxSAE/view?usp=sharing
+2) LINUX PACKAGE (full source code + pre-compiled binaries + example fasta files):    [release version]
+Link: https://drive.google.com/file/d/1GhInYTiBIOLkRmUBL3HZSSGLce0L_NQV/view?usp=sharing
 
 
 =======================================
