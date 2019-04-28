@@ -51,7 +51,7 @@ Both source and binaries of OSTRFPD have been successfully tested in Windows 7, 
 Link: https://drive.google.com/file/d/1GhInYTiBIOLkRmUBL3HZSSGLce0L_NQV/view?usp=sharing
 
 2) LINUX PACKAGE (full source code + pre-compiled binaries + example fasta files):    [release version]
-Link: https://drive.google.com/file/d/1GhInYTiBIOLkRmUBL3HZSSGLce0L_NQV/view?usp=sharing
+Link: https://drive.google.com/file/d/1qpTsiR07Uru5S_YcKAI6voPxbYKeC-5W/view?usp=sharing
 
 
 =======================================
