@@ -1,6 +1,6 @@
 #!/usr/bin/python  
 # encoding: utf-8
-''' (Revised version for submission)
+''' (Release version)
  #######   ######  ######## ########  ######## ########  ########     
 ##     ## ##    ##    ##    ##     ## ##       ##     ## ##     ##    
 ##     ## ##          ##    ##     ## ##       ##     ## ##     ##    
