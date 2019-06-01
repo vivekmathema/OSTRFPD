@@ -8,7 +8,11 @@ A user friendly toolkit to identify short tandem repeats in DNA, RNA and amino a
 
 This document consists of supplementary information including installation manual, command syntax and special extended information for OSTRFPD. The main artilce associated with the software is entitled:
      “OSTRFPD: Multifunctional tool for genome-wide short tandem repeat analysis for DNA,       transcripts and amino acid sequences with integrated primer designer”
- 
+
+
+```
+Pubmed Link to associated paper:  https://www.ncbi.nlm.nih.gov/pubmed/31040636
+```
 
 ## OVERVIEW
 
