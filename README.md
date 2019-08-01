@@ -22,6 +22,29 @@ The Software and source code is freely available at: https://github.com/vivekmat
 Citation: Mathema VB, Dondorp AM, Imwong M (2019) OSTRFPD: Multifunctional tool for genome-wide short tandem repeat analysis for DNA, transcripts and amino acid sequences with integrated primer designer. Evolutionary Bioinformatics.DOI: 10.1177/1176934319843130
 ```
 
+**Core architecture of OSTRFPD**
+
+<img src="/images/Figure_1.jpg" alt="OSTRFPD Architecture"/>
+
+
+
+**Screenshot of the GUI mode in OSTRFPD**
+
+<img src="/images/Figure_2.jpg" alt="OSTRFPD GUI display"/>
+
+
+**Screenshot (Truncated) for the Console display during microsatellite/amino acid repeats search in OSTRFPD**
+
+<img src="/images/Figure_3.jpg" alt="OSTRFPD console display"/>
+
+
+
+**Example of the microsatellite or amino acid simple alignment/mismatch display output**
+
+<img src="/images/Figure_7.jpg" alt="OSTRFPD Alignment output example"/>
+
+
+
 ## PREFACE
 
 Although thorough attention has been given during design and development of OSTRFPD, current version of the software may still contain some minor bugs and compatibility issues. This effect is common to early stages of several other software that are released and distributed. However, open source nature of this software enables it to be corrected, adopted and further optimized by the global community. We will be highly encouraged for future upgrades and further contribution based on positive feedbacks from our users. 
